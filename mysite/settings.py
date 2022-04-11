@@ -64,6 +64,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+SECRET_KEY = 'ra^r6s90cr!mq56jwpgm2ww48s1u&c9wg$w&3qsbkya8jn9t7n'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -93,7 +95,7 @@ DATABASES = {
         'PORT': '',
     }
 }
-db_from_env = dj_database_url.config()
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(db_from_env)
 
 # DATABASES = {
@@ -172,8 +174,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-if not DEBUG:
-    SECRET_KEY = 'ra^r6s90cr!mq56jwpgm2ww48s1u&c9wg$w&3qsbkya8jn9t7n'
-    import django_heroku  # 追加
 
-    django_heroku.settings(locals())  # 追加
+import django_heroku
+
+django_heroku.settings(locals())

@@ -277,26 +277,3 @@ text-align:center;
     display: inline-block;
 }
 
- /*
-.p00{
- display:inline-block;
-animation-delay: 2s;
-opacity: 0;
-animation: fadein 1s ease forwards;
-}
-.p01{
-display:inline-block;
-animation-delay: 2s;
-opacity: 0;
-animation: fadein 1s ease forwards;
-}
-.p02{
-display:inline-block;
-animation-delay: 2s;
-opacity: 0;
-animation: fadein 1s ease forwards;
-}
-@keyframes fadein {
-    100% {  opacity: 1;}
-}
- */

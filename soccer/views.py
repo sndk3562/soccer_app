@@ -10,11 +10,7 @@ from django.contrib.auth.decorators import login_required
 from .predict_score import predict
 import main
 
-import inspect
 
-# def changeOk(self):
-#     return False
-# modelformset_factory.has_changed = changeOk
 
 @login_required()
 def make_test_formset(request):
