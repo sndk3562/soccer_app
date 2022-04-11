@@ -93,7 +93,7 @@ DATABASES = {
         'PORT': '',
     }
 }
-db_from_env = dj_database_url.config(ssl_require=True)
+db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 # DATABASES = {
 #     'default': {
