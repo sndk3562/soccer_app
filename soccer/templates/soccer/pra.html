@@ -1,0 +1,206 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="card" style="width: 50rem;">
+    <form method="post" class="form-auth">
+    {% for filed in formset %}
+      <div class="filed">
+          <div class="form-label-group">
+              <label >選手名</label>
+              {{filed.name}}
+              <label >ディフェンス</label>
+              <span>{{ filed.defence }}</span>
+
+              <label>パス</label>
+              <span>{{ filed.passing }}</span>
+
+              <label>シュート</label>
+              <span>{{ filed.shoot }}</span>
+
+              <label>ドリブル</label>
+              <span>{{ filed.dribble }}</span>
+
+          </div>
+
+
+      </div>
+    {% endfor%}
+
+     <button class="bos" type="submit">登録</button>
+    </form>
+     <div class="grid-item grid-itemB">
+        {% for a in all %}
+        <a href="{% url 'update' a.pk %}">編集</a> <!-- 追加 -->
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+{% extends "app/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="card" style="width: 50rem;">
+    <form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+    {% for filed in formset %}
+      <div class="filed">
+          <div class="form-label-group">
+
+              <label >選手名</label>
+              {{filed.name}}
+              <label >ディフェンス</label>
+              <span>{{ filed.defence }}</span>
+
+              <label>パス</label>
+              <span>{{ filed.passing }}</span>
+
+              <label>シュート</label>
+              <span>{{ filed.shoot }}</span>
+
+              <label>ドリブル</label>
+              <span>{{ filed.dribble }}</span>
+
+               <label>チーム</label>
+              <span>{{ filed.teamnumber }}</span>
+
+
+
+          </div>
+
+
+      </div>
+    {% endfor%}
+
+     <button class="bos" type="submit">登録</button>
+    </form>
+
+    {% if flag %}
+     <div class="grid-item grid-itemB">
+        {% for team in teams %}
+        <a href="{% url 'update' team.pk %}">編集</a> <!-- 追加 -->
+
+        {% endfor %}
+
+    </div>
+    {% endif %}
+
+
+
+</div>
+
+
+{% endblock %}
+
+
+enctype="multipart/form-data"
+
+
+ <form class="fp"　method="post" >{% csrf_token %}
+
+           {% for form in  formset%}
+            {{ form.as_p }}<br>
+           {% endfor %}
+     <button class="bos" type="submit">登録</button>
+ </form>
+
+
+
+{% if flag %}
+     <div class="grid-item grid-itemB">
+        {% for team in tn %}
+        <a href="{% url 'update' tn %}">編集</a> <!-- 追加 -->
+
+        {% endfor %}
+
+    </div>
+    {% endif %}
+
+
+
+  <form  class = "fp" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ formset.as_p }}<br>
+    <button type="submit" name="submit">Submit</button>
+   </form>
+
+
+
+
+{% block content %}
+
+
+ <form  class = "fp" method="post" enctype="multipart/form-data">
+     {{formset.management_form}}
+    {% csrf_token %}
+
+          {% for form in  formset%}
+            {{ form.as_p }}<br>
+           {% endfor %}
+
+    <button type="submit" name="submit">Submit</button>
+ </form>
+
+
+
+{% endblock %}
+
+
+
+ {% for form in  formset%}
+          {{ form.id }}
+            {{ form.as_p }}<br>
+           {% endfor %}
+
+
+
+
+
+
+
+<div class="card" style="width: 50rem;">
+    <form action="" method="post" class="form-auth">
+        {{formset.management_form}}
+         {% csrf_token %}
+    {% for filed in formset %}
+        {% for hidden in filed.hidden_fields %}
+        {{ hidden }}
+        {% endfor%}
+      <div class="filed">
+          <div class="form-label-group">
+              <label name="name" >選手名</label>
+              {{filed.name}}
+              <label >ディフェンス</label>
+              <span>{{ filed.defence }}</span>
+
+              <label>パス</label>
+              <span>{{ filed.passing }}</span>
+
+              <label>シュート</label>
+              <span>{{ filed.shoot }}</span>
+
+              <label>ドリブル</label>
+              <span>{{ filed.dribble }}</span>
+
+          </div>
+      </div>
+
+        {% endfor%}
+         <button type="submit" >Submit</button>
+    </form>
+</div>
+
+{%endblock%}

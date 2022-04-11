@@ -1,0 +1,44 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<form class="fp" method="post"  enctype="multipart/form-data">
+      {{formset.management_form}}
+       {% csrf_token %}
+   <div class="player-form-grid">
+       <div class="keeper">
+           <span class="make-po">キーパー</span><br>
+          {{formset.0.as_p}}
+       </div>
+
+
+        <div class="def">
+          <span class="make-po">ディフェンス</span><br>
+          {% for form in formset|slice:"1:5" %}
+           {{form.as_p}}<br>
+          {% endfor %}
+        </div>
+
+    <div class="mid">
+        <span class="make-po">ミッドフィルダー</span><br>
+         {% for form in formset|slice:"5:9" %}
+        {{form.as_p}}<br>
+        {% endfor %}
+    </div>
+    <div class="fw">
+        <span class="make-po">フォワード</span><br>
+         {% for form in formset|slice:"9:11" %}
+        {{form.as_p}}<br>
+        {% endfor %}
+    </div>
+   <div class="edit-team">
+        <span style="background-color:rgb(255, 255, 255)">編集中</span><br>
+
+   </div>
+
+
+  </div>
+    <button type="submit" >Submit</button>-->
+</form>
+{% endblock %}
