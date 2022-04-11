@@ -103,6 +103,7 @@ def make_live(result):
 # __pycache__
 # myvenv
 # db.sqlite3
+
 # chance_words = ['{}がシュート打つもキーパにキャッチされる','{}がサイドを突破、クロスに{}が合わせるもわずかにそれる']
 # goal_words =['GOOOOOOOAl!!','{}がエリア外からミドルシュート!!']
 # lost_words =['GOAL','{}がエリア外からミドルシュート!!']
