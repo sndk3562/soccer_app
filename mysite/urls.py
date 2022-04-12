@@ -18,13 +18,15 @@ from django.urls import path, include
 from . import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')),
-    path('soccer/', include('soccer.urls'))
+    path('soccer/', include('soccer.urls')),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()
