@@ -41,7 +41,6 @@ class ProfileEditView(LoginRequiredMixin, View):
             initial={
                 'first_name': user_data.first_name,
                 'last_name': user_data.last_name,
-                'department': user_data.department
             }
         )
 
@@ -55,7 +54,6 @@ class ProfileEditView(LoginRequiredMixin, View):
             user_data = CustomUser.objects.get(id=request.user.id)
             user_data.first_name = form.cleaned_data['first_name']
             user_data.last_name = form.cleaned_data['last_name']
-            user_data.department = form.cleaned_data['department']
             user_data.save()
             return redirect('profile')
 

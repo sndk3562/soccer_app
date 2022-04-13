@@ -12,6 +12,9 @@ Y = coe[0] * r ** 2 + coe[1] * r + coe[2]
 
 name_list = ['a'] * 10
 def main(my_team,enemy_team):
+    global my_name_list,enemy_name_list
+    my_name_list = my_team.values_list('name', flat=True)
+    enemy_name_list = enemy_team.values_list('name', flat=True)
     score = predict_game(my_team,enemy_team)
     result = poidssn(score)
     all_live = make_live(result)
@@ -82,11 +85,10 @@ def make_live(result):
     [all_live.append([min, 2, random.choice(lost_words).format(name_list[min % 10])]) for min in minute]
     #チャンス
     minute = [random.randint(0, 90) for _ in range(number//2)]
-    print(minute)
-    [all_live.append([min, 3, random.choice(chance_words).format('s')]) for min in minute]
+    [all_live.append([min, 3, random.choice(chance_words).format(random.choice(my_name_list))]) for min in minute]
     #敵のチャンス
     minute = [random.randint(0, 90) for _ in range(number - number//2)]
-    [all_live.append([min, 4, random.choice(chance_words).format('s')]) for min in minute]
+    [all_live.append([min, 4, random.choice(chance_words).format(random.choice(enemy_name_list))]) for min in minute]
 
     all_live.sort()
     result.insert(1,5)
@@ -114,4 +116,7 @@ def make_live(result):
 
 
 
-
+#
+# def changeOk(self):
+#     return True
+# ModelForm.has_changed = changeOk

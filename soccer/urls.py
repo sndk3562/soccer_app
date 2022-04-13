@@ -1,9 +1,14 @@
+from django.urls import path
+from soccer import views
 from mysite.urls import  path
-from .views import make_test_formset,Update,GameView
+from .views import MakeTeamView,Update,GameView
 
 urlpatterns = [
-    path('', make_test_formset,name='make_team'),
-
-    path('update/<int:team_number>',Update,name='update'),
-    path('game/',GameView,name='game')
+    path('', views.IndexView.as_view(), name='index'),
+    path('make', MakeTeamView,name='make_team'),
+    path('update/<int:team_number>', Update, name='update'),
+    path('game/', GameView, name='game')
 ]
+
+
+

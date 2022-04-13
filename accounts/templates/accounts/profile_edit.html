@@ -1,4 +1,4 @@
-{% extends "app/base.html" %}
+{% extends "soccer/base.html" %}
 {% load widget_tweaks %}
 
 {% block content %}
@@ -17,12 +17,7 @@
                             {% render_field form.last_name class="form-control" placeholder="名" %}
                         </td>
                     </tr>
-                    <tr>
-                        <th class="header">所属</th>
-                        <td class="data">
-                            {% render_field form.department class="form-control" placeholder="所属" %}
-                        </td>
-                    </tr>
+
                 </tbody>
             </table>
             <div class="button mx-auto">

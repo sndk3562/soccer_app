@@ -1,4 +1,4 @@
-{% extends "app/base.html" %}
+{% extends "soccer/base.html" %}
 {% load static %}
 {% load widget_tweaks %}
 
@@ -23,7 +23,7 @@
 
         　　
      </div>
- </form>
+</form>
 
 <div class="live-container">
      <br>
@@ -52,27 +52,29 @@
     <br>
 
    {% elif a.1 == 2 %}
-    <div class="left-live-min">
-        {{a.0}}分
-    </div>
-    <div class="left-live-eg">
-       GOAL!!
-    </div>
-    <div class="left-live-c">
-       {{a.2}}
-    </div>
-    <br>
+       <div class="left-live-min">
+          {{a.0}}分
+       </div>
+       <div class="left-live-eg">
+           GOAL!!
+       </div>
+       <div class="left-live-c">
+          {{a.2}}
+       </div>
+       <br>
 
-     {% elif a.1 == 4 %}
-    <div class="left-live-min">
-        {{a.0}}分
-    </div>
-    <div class="left-live-c">
-       {{a.2}}
-    </div>
-    <br>
-     {%else%}
 
+    {% elif a.1 == 4 %}
+       <div class="left-live-min">
+          {{a.0}}分
+        </div>
+        <div class="left-live-c">
+           {{a.2}}
+        </div>
+         <br>
+
+
+    {%else%}
      <div class="result" >
          {{a.0}} - {{a.2}}
      </div>

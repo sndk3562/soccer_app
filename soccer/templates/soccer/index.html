@@ -1,48 +1,9 @@
-{% extends "app/base.html" %}
-{% load static %}
+{% extends "soccer/base.html" %}
 {% load widget_tweaks %}
-
+{% load static%}
 {% block content %}
-<form class="fp" method="post"  enctype="multipart/form-data">
-      {{formset.management_form}}
-       {% csrf_token %}
-   <div class="player-form-grid">
-       <div class="keeper">
-           <span class="make-po">キーパー</span><br>
-          {{formset.0.as_p}}
-       </div>
 
-
-        <div class="def">
-          <span class="make-po">ディフェンス</span><br>
-          {% for form in formset|slice:"1:5" %}
-           {{form.as_p}}<br>
-          {% endfor %}
-        </div>
-
-    <div class="mid">
-        <span class="make-po">ミッドフィルダー</span><br>
-         {% for form in formset|slice:"5:9" %}
-        {{form.as_p}}<br>
-        {% endfor %}
-    </div>
-    <div class="fw">
-        <span class="make-po">フォワード</span><br>
-         {% for form in formset|slice:"9:11" %}
-        {{form.as_p}}<br>
-        {% endfor %}
-    </div>
-   <div class="edit-team">
-        <span style="background-color:rgb(255, 255, 255)">チームを編集する</span><br>
-       {%for team in NumberOfTeams%}
-       <a href="{% url 'update' team %}" class="btn btn--yellow btn--cubic">TEAM{{team}}</a><br>
-       <br>
-      {%endfor%}
-   </div>
-
-
-  </div>
-    <button type="submit" >Submit</button>-->
-</form>
+<div class="home-img">
+ <img src="{% static 'img/logo.jpg' %}"width="60%" height="60%" border="0" />
+</div>
 {% endblock %}
-
