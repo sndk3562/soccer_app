@@ -8,7 +8,12 @@
        {% csrf_token %}
    <div class="player-form-grid">
        <div class="keeper">
-           <span class="make-po">キーパー</span><br>
+           <span class="make-po">キーパー</span>
+           <span class="status-d">守備</span>
+           <span class="make-po">ドリブル</span>
+           <span class="make-po">パス</span>
+           <span class="make-po">シュート</span>
+           <br>
           {{formset.0.as_p}}
        </div>
 
@@ -33,12 +38,12 @@
         {% endfor %}
     </div>
    <div class="edit-team">
-        <span style="background-color:rgb(255, 255, 255)">完了</span><br>
+        <span style="background-color:rgb(255, 255, 255)">編集中</span><br>
 
    </div>
 
 
   </div>
-    <button type="submit" >Submit</button>
+    <button type="submit" >完了</button>
 </form>
 {% endblock %}

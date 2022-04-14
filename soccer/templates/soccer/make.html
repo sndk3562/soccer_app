@@ -8,7 +8,13 @@
        {% csrf_token %}
    <div class="player-form-grid">
        <div class="keeper">
-           <span class="make-po">キーパー</span><br>
+           <span class="make-po">キーパー</span>
+           <span class="status-d">守備</span>
+           <span class="make-po">ドリブル</span>
+           <span class="make-po">パス</span>
+           <span class="make-po">シュート</span>
+
+           <br>
           {{formset.0.as_p}}
        </div>
 

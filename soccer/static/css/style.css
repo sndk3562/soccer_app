@@ -178,13 +178,22 @@ a.btn--yellow:hover {
 }
 
 .make-po{
- color: #364e96;/*文字色*/
-  border: solid 3px #364e96;/*線色*/
-  padding: 0.5em;/*文字周りの余白*/
-  border-radius: 0.5em;/*角丸*/
+ color: #364e96;
+  border: solid 3px #364e96;
+  padding: 0.5em;
+  border-radius: 0.5em;
   }
 .make-po{
 
+  background-color: #a9a9a9;
+  border-color: #a9a9a9;
+}
+.status-d{
+  margin-left : 90px;
+  color: #364e96;
+  border: solid 3px #364e96;
+  padding: 0.5em;
+  border-radius: 0.5em;
   background-color: #a9a9a9;
   border-color: #a9a9a9;
 }
@@ -262,11 +271,6 @@ text-align:center;
     font-weight: bold;
 
 }
-
-
-
-
-
 
 .ex{
     background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
