@@ -22,8 +22,12 @@ password       : Otameshi10
 
 # 特徴
 - 自分のオリジナルチームを作ることが可能
+- https://user-images.githubusercontent.com/102356191/163509848-633e1806-eda2-4adb-81ad-cfce02b17fec.png
 - ポアソン分布を用いて計算することで現実のサッカー結果に近い試合予測
+- https://user-images.githubusercontent.com/102356191/163509897-3273bb40-3c90-4a44-a021-5585a76b7cfe.png
 - 様々な対戦相手を制作可能
+
+
 
 
 # Requirements
