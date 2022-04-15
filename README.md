@@ -22,11 +22,10 @@ password       : Otameshi10
 
 # 特徴
 - 自分のオリジナルチームを作ることが可能
-- https://user-images.githubusercontent.com/102356191/163509848-633e1806-eda2-4adb-81ad-cfce02b17fec.png
+- ttps://github.com/sndk3562/soccer_app/issues/1#issue-1205195423
 - ポアソン分布を用いて計算することで現実のサッカー結果に近い試合予測
-- https://user-images.githubusercontent.com/102356191/163509897-3273bb40-3c90-4a44-a021-5585a76b7cfe.png
+- https://github.com/sndk3562/soccer_app/issues/2#issue-1205195595
 - 様々な対戦相手を制作可能
-
 
 
 
