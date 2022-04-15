@@ -8,9 +8,26 @@ def NoNeedToChagne(self):
     return True
 ModelForm.has_changed = NoNeedToChagne
 
+# queryset=MyTeamNumber.objects.all(),
 
+class DeleteForm(forms.Form):
+    is_confirmed = forms.BooleanField(initial=False,label='消去しますか?')
+class MyTeamNumberForm(forms.Form):
+    ch = (
+        ("ja", "日本"),
+        ("us", "アメリカ"),
+        ("uk", "イギリス"),
+    )
+
+    x = forms.ChoiceField(choices=ch)
 class GameCountryForm(forms.Form):
-    my_team_number_post = forms.ModelChoiceField(queryset=MyTeamNumber.objects.all(),empty_label='あなたのチーム')
+    # ch = (
+    #     ("0", "0"),
+    #     ("0", "0")
+    #
+    # )
+    my_team_number_post = forms.ModelChoiceField(queryset=MyTeamNumber.objects.all(), empty_label='あなたのチーム')
+    # my_team_number_post = forms.ChoiceField(choices=ch,l='あなたのチーム')
     enemy_country_name_post = forms.ModelChoiceField(queryset=EnemyCountry.objects.all(),label='相手のチーム',empty_label='相手のチーム')
 
 class EnemyCountryForm(forms.Form):
@@ -31,7 +48,6 @@ class EnemyPlayerForm(ModelForm):
 
 
 class PlayerForm(ModelForm):
-
     class Meta:
         model = Player
         fields = ('name','defence','dribble','passing','shoot' )

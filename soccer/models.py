@@ -11,12 +11,13 @@ class MyTeamNumber(models.Model):
     def __str__(self):
         return ('チーム'+str(self.my_team_number))
 
+
+
 class Player(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-
     name = models.CharField('選手名',max_length=20)
     defence = models.IntegerField('ディフェンス')
     dribble = models.IntegerField('ドリブル')
@@ -27,15 +28,17 @@ class Player(models.Model):
         return self.name
 
 
-class EnemyCountry(models.Model):
 
+
+class EnemyCountry(models.Model):
     enemy_country_name = models.CharField(max_length=20)
 
     def __str__(self):
         return self.enemy_country_name
 
-class EnemyPlayer(models.Model):
 
+
+class EnemyPlayer(models.Model):
     name = models.CharField('選手名', max_length=20)
     defence = models.IntegerField('ディフェンス',)
     dribble = models.IntegerField('ドリブル')

@@ -1,0 +1,14 @@
+
+{% extends "soccer/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<form class="fp" method="post"  enctype="multipart/form-data">
+
+       {% csrf_token %}
+        {{form}}
+        <button type="submit" >完了</button>
+</form>
+
+{% endblock %}
