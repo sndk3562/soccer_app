@@ -1,0 +1,32 @@
+
+{% load static %}
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>サッカー シュミレーション</title>
+</head>
+<body>
+
+<div class="page-box">
+    <button type=“button” class="page" onclick="location.href='/'">ホーム</button>
+    {% if user.is_authenticated %}
+    <button type=“button” class="page" onclick="location.href='{% url 'game' %}'">試合</button>
+    <button type=“button” class="page" onclick="location.href='{% url 'make_team' %}'">チーム作成</button>
+    <button type=“button” class="page" onclick="location.href='{% url 'profile' %}'">プロフィール</button>
+    <button type=“button” class="page" onclick="location.href='{% url 'account_logout' %}'">ログアウト</button>
+     {% else %}
+     <button type=“button” class="page" onclick="location.href='{% url 'account_login' %}'">ログイン</button>
+    <button type=“button” class="page" onclick="location.href='{% url 'account_signup' %}'">サインアップ</button>
+    {%endif%}
+</div>
+</body>
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>

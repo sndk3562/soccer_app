@@ -1,0 +1,93 @@
+{% extends "soccer/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<br>
+<br>
+<form  method="post" enctype="multipart/form-data">
+    <div class="inline">
+  　　  {% csrf_token %}
+   　　　 <div class="your-team-number">
+         {%if No_team_coment%}
+        <span style="background-color:rgb(255, 255, 255)">{{No_team_coment.0}}</span>
+         {%else%}
+          {{form.my_team_number_post}}
+         {%endif%}
+    　　　  </div>
+
+        <button type="submit" class="kickoff">試合開始</button>
+   　     <div class="enemy-country-name">
+  　　　　　　{{form.enemy_country_name_post}}
+    　　　　</div>
+
+        　　
+     </div>
+</form>
+
+<div class="live-container">
+     <br>
+
+    {% for a in prediction%}
+     {% if a.1 == 1%}
+    <div class="left-live-min">
+        {{a.0}}分
+    </div>
+    <div class="left-live-g">
+        GOOOOAL!!
+    </div>
+    <div class="left-live-c">
+       {{a.2}}
+    </div>
+    <br>
+
+    {% elif a.1 == 3%}
+
+   <div class="left-live-min">
+        {{a.0}}分
+    </div>
+    <div class="left-live-c">
+       {{a.2}}
+    </div>
+    <br>
+
+   {% elif a.1 == 2 %}
+       <div class="left-live-min">
+          {{a.0}}分
+       </div>
+       <div class="left-live-eg">
+           GOAL!!
+       </div>
+       <div class="left-live-c">
+          {{a.2}}
+       </div>
+       <br>
+
+
+    {% elif a.1 == 4 %}
+       <div class="left-live-min">
+          {{a.0}}分
+        </div>
+        <div class="left-live-c">
+           {{a.2}}
+        </div>
+         <br>
+
+
+    {%else%}
+     <div class="result" >
+         {{a.0}} - {{a.2}}
+     </div>
+          {% endif %}
+     {% endfor%}
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+
