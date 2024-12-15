@@ -1,7 +1,7 @@
 
 # サッカーシュミレーション
 
-URL : https://soccerapp1.herokuapp.com/game/
+URL : https://soccerapp1.herokuapp.com/game/(現在は公開していません。)
 
 ゲストアカウント
 メールアドレス　　 : guest@test.com
