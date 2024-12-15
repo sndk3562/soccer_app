@@ -22,7 +22,7 @@ SECRET_KEY = 'ra^r6s90cr!mq56jwpgm2ww48s1u&c9wg$w&3qsbkya8jn9t7n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://soccer-ko-309af56dc827.herokuapp.com/']
 
 
 # Application definition
